@@ -9,13 +9,12 @@ body {
 }
 
 .wrap {
-  /* 1. div 컨텐츠 중앙 정렬 관련 내용 */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  /* ★ 아이콘은 텍스트와 동일하게 적용되기 때문에 아이콘의 색상 변경됨 */
+
   text-align: center;
 }
 
@@ -39,7 +38,6 @@ body {
 }
 
 #dynamic::after {
-  /* 2. 가상클래스 지정자 및 포지션, 블락 */
   content: "";
   display: block;
   position: absolute;

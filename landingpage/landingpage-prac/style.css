@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1e82cd;
+}
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  /* 
+  1. div 컨텐츠 중앙 정렬 관련 내용
+
+  position: absolute; 
+  relative, absolute, fixed가 설정된 최초의 조상 태그를 기준으로 자신의 포지션을 설정하는 속성이다.
+  만약, 설정된 태그가 없다면, 가장 위의 태그인 body 태그가 기준이 된다.
+
+  body 태그의 위쪽과 왼쪽을 기준으로 50% 아래/오른쪽으로 기준 잡기
+  */
+
+  transform: translate(-50%, -50%);
+  /*
+
+  기준으로 잡은 곳에서 box가 시작되는 지점이 왼쪽 위쪽 꼭지점이기 때문에 화면의 정중앙에서 좀 치우친다
+  그래서, 자신의 기준점을 기준으로 이동시키는 
+  transform: translate(x, y) 를 사용하여 중앙으로 이동시킨다.
+
+  */
+
+  color: white;
+  /* ★ 아이콘은 텍스트와 동일하게 적용되기 때문에 아이콘의 색상도 변경됨 */
+
+  text-align: center;
+}
+
+.material-symbols-outlined {
+  font-size: 10rem;
+}
+
+.title {
+  font-size: 2rem;
+
+  position: relative;
+  display: inline-block;
+
+  /* 
+  § 이 후에 보기 §
+  title 클래스에 display:inline-block 을 걸어준 이유
+  
+  해당 p태그가 블락 속성을 가지기 때문에 아래에서 빈칸으로 바를 생성하고 오른쪽으로 위치를 잡으면
+  블락 끝 지점에 생성된다
+
+  이를 위해, inline 속성인 글자를 기준으로 잡기 위해 inline과 block 속성을 동시에 가지는 속성을 넣어준다.
+  */
+}
+
+/* 
+가상클래스선택자 - :
+가상요소선택자 - 선택한 요소의 일부에만 효과를 주기위한 기능 ::
+
+1. ::after 가상 요소 선택자
+요소 끝에 새로운 컨텐츠 추가하는 기능
+content라는 속성을 필수로 가져온다
+
+*/
+.title::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  right: -10px;
+  width: 4px;
+  height: 100%;
+  background-color: white;
+}
+/* 
+
+title 클래스에 after 가상요소선택자를 사용하여 빈칸을 컨텐츠로 지정
+해당 빈칸의 포지션은 title 속성의 포지션을 따르게 absolute 해준다
+(absolute를 사용하기 위해 당연히 title 포지션을 relative로 설정해줘야한다)
+
+빈칸의 색상과 크기, 높이를 설정해준다
+
+top:0 => 해당 값을 주지 않을 경우 relative를 걸어준 태그가 블락요소기 때문에 다음 줄로 넘어가서 생성된다
+
+right:0 => 해당 값을 주지 않을 경우 relative를 걸어준 위치를 기준으로 순서대로 생겨서 왼쪽에 생긴다
+이를 붙여주기 위해, 오른쪽 값을 0으로 잡아준다.
+
+
+=> title 클래스에 display:inline-block 을 걸어준 이유
+*/
+
+.list {
+  font-size: 1.5rem;
+}
+
+/* 
+
+동일 태그 내의 선택자지정
+해당id값에 있는 특정 클래스를 선택
+값을 띄우지 않고 붙여서 사용
+
+dynamic id갑에 있는 클래스 중 active 클래스가 있는 태그
+
+*/
+#dynamic.active::after {
+  display: none;
+}
