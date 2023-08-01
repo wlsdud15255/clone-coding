@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: darkslateblue;
+}
+
+.wrap {
+  /* 1. div 컨텐츠 중앙 정렬 관련 내용 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  /* ★ 아이콘은 텍스트와 동일하게 적용되기 때문에 아이콘의 색상 변경됨 */
+  text-align: center;
+}
+
+.material-symbols-outlined {
+  font-size: 10rem;
+}
+
+.lg-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.sm-text {
+  font-size: 1.5rem;
+}
+
+#dynamic {
+  position: relative;
+  display: inline-block;
+}
+
+#dynamic::after {
+  /* 2. 가상클래스 지정자 및 포지션, 블락 */
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 4px;
+  height: 100%;
+  background-color: white;
+}
+
+#dynamic.active::after {
+  display: none;
+}
