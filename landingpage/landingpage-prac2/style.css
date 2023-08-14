@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(124, 130, 11);
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.icon-size {
+  font-size: 10rem;
+  color: rgba(120, 16, 2, 0.82);
+}
+
+.lg-text {
+  font-size: 2rem;
+}
+
+.lg-text::after {
+  content: "";
+  width: 4px;
+  display: block;
+  color: black;
+}
