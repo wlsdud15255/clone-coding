@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: cornflowerblue;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  perspective: 1000px;
+}
+
+.flip {
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  color: darkslateblue;
+  font-size: 30px;
+  font-weight: bold;
+
+  transform-style: preserve-3d;
+  transition: 0.8s;
+}
+
+.flip:hover {
+  cursor: pointer;
+  transform: rotateX(-90deg);
+}
+
+.front {
+  height: 100px;
+  background-color: cornsilk;
+
+  transform: translateZ(50px);
+}
+
+.back {
+  height: 100px;
+  background-color: darksalmon;
+
+  transform: rotateX(90deg) translateZ(150px);
+}
