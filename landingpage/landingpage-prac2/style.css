@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(124, 130, 11);
+  background-color: rgb(242, 255, 0);
 }
 
 .container {
@@ -18,16 +18,31 @@ body {
 
 .icon-size {
   font-size: 10rem;
-  color: rgba(120, 16, 2, 0.82);
+  color: rgba(182, 27, 7, 0.82);
 }
 
 .lg-text {
   font-size: 2rem;
+  font-weight: bold;
 }
 
-.lg-text::after {
+#dynamic {
+  position: relative;
+  display: inline-block;
+}
+
+#dynamic::after {
+  display: block;
   content: "";
   width: 4px;
-  display: block;
-  color: black;
+  background-color: black;
+
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: -10px;
+}
+
+#dynamic.active::after {
+  display: none;
 }
