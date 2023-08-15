@@ -38,15 +38,16 @@ body {
 }
 
 #dynamic::after {
+  /* 컨텐츠, display, 가로, 높이, 색을 줘야 나타난다 */
   content: "";
   display: block;
   width: 4px;
+  height: 100%;
   background-color: white;
 
   position: absolute;
   top: 0;
   right: -10px;
-  height: 100%;
 }
 
 #dynamic.active::after {

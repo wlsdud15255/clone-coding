@@ -5,44 +5,47 @@
 }
 
 body {
-  background-color: rgb(242, 255, 0);
+  background-color: rgb(29, 85, 205);
 }
 
 .container {
   position: absolute;
   left: 50%;
   top: 50%;
+
   transform: translate(-50%, -50%);
-  text-align: center;
 }
 
-.icon-size {
+.material-symbols-outlined {
   font-size: 10rem;
-  color: rgba(182, 27, 7, 0.82);
-}
-
-.lg-text {
-  font-size: 2rem;
   font-weight: bold;
 }
 
-#dynamic {
+.lg-str {
+  font-size: 2rem;
+}
+
+.sm-str {
+  font-size: 1.5rem;
+}
+
+#Typing {
   position: relative;
   display: inline-block;
 }
 
-#dynamic::after {
-  display: block;
+#Typing::after {
   content: "";
+  display: block;
   width: 4px;
-  background-color: black;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
 
   position: absolute;
-  height: 100%;
   top: 0;
   right: -10px;
 }
 
-#dynamic.active::after {
+#Typing.active::after {
   display: none;
 }
