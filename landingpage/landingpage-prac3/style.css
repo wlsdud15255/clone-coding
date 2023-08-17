@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: deepskyblue;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.material-symbols-outlined {
+  font-size: 200px;
+}
+
+#dynamic {
+  font-size: 40px;
+
+  position: relative;
+  display: inline-block;
+}
+
+#dynamic::after {
+  content: "";
+  width: 4px;
+  background-color: black;
+  height: 100%;
+
+  position: absolute;
+  right: -10px;
+  top: 0;
+}
+
+#dynamic.active::after {
+  display: none;
+}
+
+.sm {
+  font-size: 25px;
+}
