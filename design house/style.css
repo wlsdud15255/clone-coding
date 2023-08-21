@@ -1,0 +1,145 @@
+/*
+1. 구글폰트를 지원하지 않는 폰트 적용 방법
+※ woff 확장자가 지원되는 폰트 적용
+@font-face {
+    font-family : ;
+    src : url() format('woff');
+}
+*/
+@font-face {
+  font-family: abster;
+  src: url(참고파일/font/abster-webfont.woff) format("woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /* 
+  
+  2. vh / vw
+  뷰포트의 높이/너비의 퍼센트를 지정하는 단위, 100vp는 뷰포트 100%를 높이로 지정하는 것이다.
+
+  ※ 높이를 100%라고 주지 않은 이유
+  %는 상대적인 개념이다. 만약, 높이가 수치로 지정되어 있지 않은 상태에서 %로 높이를 지정하면 아무런 공간을 가질 수 없다. 
+  너비는 한계가 있기에 상관없이 적용된다
+  */
+  width: 100%;
+  height: 100vh;
+
+  /*
+
+  3. background : linear-gradient ???
+  */
+  background: linear-gradient(rgba(22, 30, 100, 0.8), rgba(0, 0, 0, 0.8)),
+    url(참고파일/images/room.jpg);
+}
+
+.container .header {
+  width: 80%;
+  height: 80px;
+
+  /* 
+  4.  margin: 0 auto
+  header 공간을 항상 중앙에 위치시키기 위해 적용, 적용 안시키면
+  왼쪽으로 쏠려서 위치해 있다
+  */
+  margin: 0 auto;
+
+  /* 
+  5. flex로 요소를 가로 정렬, 
+  justify-content: space-between로 요소를 좌/우 끝으로 위치 시킨다.
+  */
+  display: flex;
+  justify-content: space-between;
+
+  /* 
+  7. 요소 수직방향 중앙 정렬
+  ??? line-height 와의 차이!!!
+   */
+  align-items: center;
+}
+
+.container .header h1 a {
+  text-decoration: none;
+  color: white;
+  font-family: abster;
+}
+
+.container .nav ul li {
+  /* 
+    6.목록 요소들을 가로로 정렬 시키기(flex 사용 x)
+    display: inline-block 
+    */
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.container .nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.container .nav ul li a:hover {
+  color: #1fdfdf;
+}
+
+/* hero 영역 */
+.container .hero {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container .hero h2 {
+  font-size: 60px;
+  margin-bottom: 20px;
+
+  /* 
+  4. 그라데이션 효과!!!!
+  -webkit-background-clip
+   color: transparent;
+  */
+  background: linear-gradient(to right top, #861657, #ffa69e);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.container .hero p {
+  font-size: 22px;
+}
+
+.container .hero button {
+  /* 
+    1. 버튼의 배경색 변경에서 background-color가 아닌 background인 이유/차이
+    */
+  background: none;
+  border: 2px solid darkseagreen;
+  color: white;
+
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-top: 30px;
+
+  /* 2. button 클릭 시 잔상 효과 관련
+  outline: none;
+  */
+  outline: none;
+
+  cursor: pointer;
+
+  /* 3. 효과 변경 시간 all?? 이란??? */
+  transition: all 0.4s;
+}
+
+.container .hero button:hover {
+  background-color: darkslategray;
+}
