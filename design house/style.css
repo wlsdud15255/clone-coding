@@ -1,3 +1,14 @@
+/* 
+1. 컨텐츠 중앙 정렬
+2. 글자 끝 깜빡이는 바
+3. 타이핑 효과
+4. 컨텐츠 회전(효과에 시간 부여)
+5. 폰트 적용(구글 폰트x)
+6. 배경, 글자에 그라데이션 효과 주기
+7. flex 이용(justify-content, align-items)
+
+*/
+
 /*
 1. 구글폰트를 지원하지 않는 폰트 적용 방법
 ※ woff 확장자가 지원되는 폰트 적용
@@ -32,7 +43,8 @@
 
   /*
 
-  3. background : linear-gradient ???
+  3. background : linear-gradient
+  hero의 3번 참조
   */
   background: linear-gradient(rgba(22, 30, 100, 0.8), rgba(0, 0, 0, 0.8)),
     url(참고파일/images/room.jpg);
@@ -43,23 +55,11 @@
   height: 80px;
 
   /* 
-  4.  margin: 0 auto
-  header 공간을 항상 중앙에 위치시키기 위해 적용, 적용 안시키면
-  왼쪽으로 쏠려서 위치해 있다
-  */
-  margin: 0 auto;
-
-  /* 
-  5. flex로 요소를 가로 정렬, 
-  justify-content: space-between로 요소를 좌/우 끝으로 위치 시킨다.
+  4. flex
+  justify-content, align-items
   */
   display: flex;
   justify-content: space-between;
-
-  /* 
-  7. 요소 수직방향 중앙 정렬
-  ??? line-height 와의 차이!!!
-   */
   align-items: center;
 }
 
@@ -71,7 +71,7 @@
 
 .container .nav ul li {
   /* 
-    6.목록 요소들을 가로로 정렬 시키기(flex 사용 x)
+    5.목록 요소들을 가로로 정렬 시키기(flex 사용 x)
     display: inline-block 
     */
   display: inline-block;
@@ -104,7 +104,7 @@
   margin-bottom: 20px;
 
   /* 
-  4. 그라데이션 효과!!!!
+  3. 그라데이션 효과!!!!
   -webkit-background-clip
    color: transparent;
   */
@@ -118,9 +118,6 @@
 }
 
 .container .hero button {
-  /* 
-    1. 버튼의 배경색 변경에서 background-color가 아닌 background인 이유/차이
-    */
   background: none;
   border: 2px solid darkseagreen;
   color: white;
@@ -129,14 +126,14 @@
   border-radius: 20px;
   margin-top: 30px;
 
-  /* 2. button 클릭 시 잔상 효과 관련
-  outline: none;
+  /* 1. outline: none;
+  버튼 클릭 시 클릭 효과 제거
   */
   outline: none;
 
   cursor: pointer;
 
-  /* 3. 효과 변경 시간 all?? 이란??? */
+  /* 2. 효과 변경 시간 all?? 이란??? */
   transition: all 0.4s;
 }
 
